@@ -5,6 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    cityId:0,
+    cityName:'',
+    phone:'',
+    showFoot:true
   },
   getters: {
   },
