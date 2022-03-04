@@ -31,37 +31,21 @@
           </div>
         </div>
       </div>
-      <p @click="headTextHeight" class="toheight"><van-icon name="minus" /></p>
+      <p @click="headTextHeight" class="toheight"><van-icon name="arrow-down" v-if="flag"/><van-icon name="arrow-up" v-else/></p>
     </div>
     <!-- 中间板块 -->
     <!-- 演职人员 -->
     <div class="main" style="background: white">
       <h3>演职人员</h3>
-      <!-- <van-grid :border="false" >
-        <van-grid-item
-          v-for="item in filmsInfo.actors"
-          :key="item.name"
-          icon="photo-o"
-          text="文字"
-        >
-          <van-image :src="item.avatarAddress" />
-          <p>
-            {{item.name}}<br />
-            {{item.role}}
-          </p>
-        </van-grid-item>
-      </van-grid> -->
       <div class="swiper-container">
        <div class="swiper-wrapper">
          <div class="swiper-slide" v-for="item in filmsInfo.actors" :key="item.name"><img :src="item.avatarAddress"></div>
        </div>
       </div>
-      <div class="center">{{actor.role && '角色：'}}{{actor.role}}</div>
+      <div class="center">{{actor.role && '角色：'}}{{actor.role || '无'}}</div>
       <div class="center">{{actor.name && '演员：'}}{{actor.name}}</div>
     </div>
     <br />
-    <!-- 底部板块 -->
-    <!-- <van-submit-bar :price="3050" button-text="确定购买" /> -->
   </div>
 </template>
 
@@ -74,7 +58,8 @@ export default {
     return {
       filmsInfo: {},
       activeh: true,
-      actor:{}
+      actor:{},
+      flag:true
     };
   },
   mounted() {
@@ -96,10 +81,9 @@ export default {
               
             }
           }
-        });
+        });/* role */
         setInterval(()=>{
           this.actor = this.filmsInfo.actors[swiper.activeIndex-3];
-          console.log(this.actor);
         },1000)
       });
     });
@@ -111,6 +95,7 @@ export default {
     headTextHeight() {
       // this.$refs.headTextHeight.h
       this.activeh = !this.activeh;
+      this.flag = !this.flag
     },
     onClickLeft() {
       this.$router.push('/film');
@@ -126,11 +111,13 @@ export default {
   display: flex;
   flex-direction: column;
 }
+.van-hairline--surround{
+  width: 100%;
+}
 .main {
   width: 100%;
   height: 20rem;
   margin-top: 5px;
-  padding-left: 10px;
   overflow: hidden;
   display: inline-block;
 }
@@ -186,7 +173,7 @@ export default {
 img{width: 100%;height: 100%;}
 .list{display: flex;height: 60px;padding: 10px;}
 .left{width: 80px;margin-right:10px;}
-.center{width: 150px;margin-right:10px;}
+.center{width: 150px;margin-left:10px;margin-top: 10px;}
 .right{width: 120px;line-height: 60px;height: 60px;}
 .small{font-size:14px;color:darkgray;line-height: 25px;}
 .type{line-height: 25px;}

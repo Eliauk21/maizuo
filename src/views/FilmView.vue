@@ -87,17 +87,7 @@
     </van-tabs>
     
     <el-backtop  :bottom="100">
-      <div
-        style="{
-          height: 100%;
-          width: 100%;
-          background-color: #f2f5f6;
-          box-shadow: 0 0 6px rgba(0,0,0, .12);
-          text-align: center;
-          line-height: 40px;
-          color: #ccc;
-        }"
-      >
+      <div class="back">
         <i class="el-icon-upload2"></i>
       </div>
     </el-backtop>
@@ -190,5 +180,14 @@ export default {
   border-radius: 12px;
   background: rgba(255,255,255,.3);
   border: 0;
+}
+.back{
+  height: 100%;
+  width: 100%;
+  background-color: #f2f5f6;
+  box-shadow: 0 0 6px rgba(0,0,0, .12);
+  text-align: center;
+  line-height: 40px;
+  color: #ccc;
 }
 </style>

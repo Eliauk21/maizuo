@@ -6,7 +6,6 @@
 		<a href="https://mp.weixin.qq.com/s/PKXgAO-0ZRPKbpBxkA9LRA">
 			<img src="https://static.maizuo.com/v5/upload/b08d99f2619ebc073fecb65a309b10a5.jpg">
 		</a>
-
 		<a href="https://mp.weixin.qq.com/s/HHdUPa4tjGYcU9ZGOoY2BA">
 			<img src="https://static.maizuo.com/v5/upload/c794bf14470c639435c8a504cdca1056.jpg">
 		</a>
@@ -28,7 +27,6 @@
 		<a href="">
 			<img src="https://static.maizuo.com/v5/upload/0a523a8524d399dfbd1ce69d42802a02.jpg">
 		</a>
-		<!-- <img src="https://static.maizuo.com/v5/upload/37830902b3526a7c999e80b9d2ce76b3.jpg"> -->
 	</div>
 </template>
 

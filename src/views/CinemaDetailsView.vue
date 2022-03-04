@@ -53,12 +53,8 @@ export default {
       img:''
     };
   },
-  updated(){
-    console.log(this.img);
-  },
-  created(){
-    axios.get(`api/v1/getCinemaList?cityId=${this.cityId}`).then((res)=>{
-        /* console.log(res.data.data.cinemas); */
+  mounted(){
+    axios.get(`api/v1/getCinemaList?cityId=${this.$store.state.cityId}`).then((res)=>{
         this.cinema = res.data.data.cinemas.find((v)=>{
             return v.cinemaId == this.$route.query.cinemaId
         })
@@ -85,11 +81,6 @@ export default {
             setInterval(()=>{
               this.filmActiveIndex = swiper.activeIndex-3;
               this.img=this.filmList[this.filmActiveIndex].poster;
-              /* --------------------------------------- */
-              /* console.log(this.img); */
-              /* axios.get(`/api/v1/getCinemaFilmSchedules?cityId=${this.cityId}&filmId=${this.filmList[this.filmActiveIndex].filmId}&data=${getData(1)}`).then((res)=>{
-                  console.log(res.data);
-              }) */
             },1000)
         });
     })

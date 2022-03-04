@@ -40,13 +40,14 @@
             }
 		},
         created(){
+            /*  */
             axios.get('api/v1/getCitiesInfo').then((res) => {
                 for(let i=0;i<this.indexList.length;i++){
                     this.indexList[i].content =  res.data.data.cities.filter((v)=>{
                        return v.pinyin.substr(0,1) === this.indexList[i].title.toLowerCase();
                     })
-                    /* console.log(this.indexList[i].content); *//* 数组下面的pinyin */
                 }
+                /* console.log(res.data.data.cities); */
             })
         },
         methods:{
@@ -79,6 +80,13 @@
             jump(route){
                 this.$router.push(route);
             }
+        },
+        beforeRouteEnter(to,from,next){
+            next(vm => vm.$store.state.showFoot = false);       //未执行next(),得不到this
+        },
+        beforeRouteLeave(to, from, next) {
+            this.$store.state.showFoot = true;
+            next();
         }
     }
 </script>

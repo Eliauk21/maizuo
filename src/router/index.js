@@ -17,27 +17,27 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/film',
-    component: FilmView,
+    component: FilmView
   },
   {
     path: '/filmDetails',
-    component: FilmDetailsView,
+    component: FilmDetailsView
   },
   {
     path: '/cinema',
-    component: CinemaView,
+    component: CinemaView
   },
   {
     path: '/cinemaDetails',
-    component: CinemaDetailsView,  
+    component: CinemaDetailsView     
   },
   {
     path:'/city',
-    component:CityView      
+    component:CityView    
   },
   {
     path:'/order',
-    component:OrderView      
+    component:OrderView  
   },
   {
     path: '/news',
@@ -49,7 +49,7 @@ const routes = [
   },
   {
     path: '/login',
-    component: LoginView
+    component: LoginView 
   },
   //////这里跳转页面，没跳好
   {
@@ -66,19 +66,6 @@ const router = new VueRouter({
   routes
 })
 
-
-//---------------------------------------//
-/* router.beforeEach((to,from,next)=>{
-  if(to==='/city'){
-      next((vm)=>{
-        vm.$store.state.showFoot = false;
-      });
-  }else{
-    next((vm)=>{
-      vm.$store.state.showFoot = true;
-    });
-  }
-}) */
 
 
 export default router

@@ -113,9 +113,6 @@ export default {
           this.$router.push('/mine');
         }
       }
-      // rulesYzm = "required: true, message: '请填写验证码'"
-      // console.log(this.yzmInto);
-      // console.log(this.yzm);
     },
   },
 };
